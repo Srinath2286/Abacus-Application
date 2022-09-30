@@ -1,0 +1,87 @@
+.main {
+  display: flex;
+  position: absolute;
+}
+
+#from-1 {
+  margin: auto;
+  width: 400px;
+  height: 490px;
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  border-radius: 5px;
+  flex-direction: column;
+  border: 1px solid pink;
+
+  margin-top: 20px;
+}
+#from-1 input {
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-top-color: steelblue;
+  border-bottom-color: steelblue;
+  border-left-color: violet;
+  border-right-color: violet;
+}
+#button1 {
+  background-color: rgb(243, 123, 123);
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
+}
+#button1:hover {
+  background-color: rgb(43, 137, 231);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+}
+
+#form-2 input {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-top-color: steelblue;
+  border-bottom-color: steelblue;
+  border-left-color: violet;
+  border-right-color: violet;
+}
+#button2 {
+  background-color: rgb(24, 121, 240);
+  color: white;
+  font-weight: bold;
+}
+#button2:hover {
+  background-color: rgb(205, 15, 145);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+}
+#button3 {
+  background-color: rgb(24, 121, 240);
+  color: white;
+  font-weight: bold;
+}
+#buttonx {
+  display: flex;
+  justify-content: space-between;
+  flex: auto;
+}
+#buttonx2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+#button3:hover {
+  background-color: rgb(205, 15, 145);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  margin: 10px;
+  float: right;
+}

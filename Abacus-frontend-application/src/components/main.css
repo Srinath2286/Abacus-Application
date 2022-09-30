@@ -1,0 +1,122 @@
+.main {
+  display: flex;
+  position: absolute;
+}
+
+#from-1 {
+  margin-top: 100px;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  border-radius: 5px;
+  flex-direction: column;
+  border: 30px solid red;
+
+  margin-top: 20px;
+}
+#from-1 input {
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-top-color: steelblue;
+  border-bottom-color: steelblue;
+  border-left-color: violet;
+  border-right-color: violet;
+}
+#button1 {
+  background-color: rgb(243, 123, 123);
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
+}
+#button1:hover {
+  background-color: rgb(43, 137, 231);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+}
+select {
+  width: 350px;
+  height: 50px;
+  background-color: rgb(225, 167, 247);
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  border: 2px solid black;
+  border-top-color: steelblue;
+  border-bottom-color: steelblue;
+  border-left-color: violet;
+  border-right-color: violet;
+  border-radius: 10px;
+  transform: translateX(5px);
+}
+#from-1 {
+  display: flex;
+  margin: auto;
+  width: 400px;
+  height: 450px;
+  margin: auto;
+  display: flex;
+  padding: 20px;
+  border-radius: 5px;
+  flex-direction: column;
+  border: 1px solid pink;
+  margin-top: 10px;
+}
+#form-2 input {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  margin: 15px;
+  border-radius: 5px;
+  border: 2px solid black;
+  border-top-color: steelblue;
+  border-bottom-color: steelblue;
+  border-left-color: violet;
+  border-right-color: violet;
+}
+
+#button2 {
+  background-color: rgb(24, 121, 240);
+  color: white;
+  font-weight: bold;
+}
+#button2:hover {
+  background-color: rgb(205, 15, 145);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+}
+#button3 {
+  background-color: rgb(24, 121, 240);
+  color: white;
+  font-weight: bold;
+}
+#buttonx {
+  display: flex;
+  justify-content: space-between;
+  flex: auto;
+}
+#buttonx2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+#button3:hover {
+  background-color: rgb(205, 15, 145);
+  color: black;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  margin: 10px;
+  float: right;
+}
+#form-4 input {
+  text-align: center;
+  background-color: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+  padding: 50px;
+  border-radius: 10px;
+}

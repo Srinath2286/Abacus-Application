@@ -1,0 +1,49 @@
+{
+  "addacademy": [
+    {
+      "academyName": "abacus",
+      "academyUrl": "https://n2.sdlcdn.com/imgs/a/b/v/SDL045636489_1372824048_image1-f7ced.jpg",
+      "academyLoc": "hyderabad",
+      "contact": "9666820562",
+      "email": "ssrinaththallapally0369@gmail.com",
+      "discription": "good one",
+      "id": 1
+    }
+  ],
+  "addcourse": [
+    {
+      "courseName": "Masai-Course",
+      "courseDur": "10-months",
+      "courseTime": "2700 hours",
+      "studeten": "2022-09-30",
+      "discription": "good for skills",
+      "id": 7
+    },
+    {
+      "courseName": "Masai-Course",
+      "courseDur": "10-months",
+      "courseTime": "2700 hours",
+      "studeten": "2022-09-30",
+      "discription": "good for skills",
+      "id": 8
+    },
+    {
+      "courseName": "abacus",
+      "courseDescription": "The best academy",
+      "courseDuration": "3months",
+      "noofStudents": "20",
+      "courseTime": "4PM",
+      "id": 9
+    },
+    {
+      "courseName": "doug",
+      "courseDescription": "The best academy",
+      "courseDuration": "6months",
+      "noofStudents": "10",
+      "courseTime": "9am",
+      "id": 10
+    }
+  ],
+  "addstudent": [],
+  "addinistitute": []
+}
