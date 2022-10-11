@@ -5,14 +5,14 @@ import { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import NavbarOne from "../CurdOerators/Navbarone";
 
-export default function Adminstudent() {
+export default function StudentAdmission() {
   const [take, setTake] = useState([]);
   let navigate = useNavigate();
   let parms = useParams();
   console.log(take);
   let getstudent = async () => {
     try {
-      let two = await axios.get(`http://localhost:8080/viewstudent`);
+      let two = await axios.get(`http://localhost:8080/viewadmission`);
       setTake(two.data);
     } catch (error) {
       console.log(error);
@@ -28,7 +28,7 @@ export default function Adminstudent() {
 
   return (
     <Box>
-      <NavbarOne />
+      
       <br />
       <br />
       <div>
@@ -47,21 +47,25 @@ export default function Adminstudent() {
                 border: "1px solid black",
                 borderRadius: "10px",
                 fontSize: "18px",
-                fontWeight: "bold",
+                
                 fontFamily: "serif",
                 margin: "10px",
                 padding: "20px",
               }}
             >
               <h1>Student Name: {item.studentName}</h1>
-              <h2>Student DOB:{item.studentDOB}</h2>
+              <h2>Student DOB: {item.studentDOB}</h2>
               <h2>Address: {item.address}</h2>
-              <h2>MobileNumber: {item.mobilenumber}</h2>
+              <h2>Mobile No: {item.mobilenumber}</h2>
               <h2>Age: {item.age}</h2>
+              <h2>Gender: {item.gender}</h2>
+              <h2>Course Name: {item.coursename}</h2>
               <Link to={`/admincourse/${item.id}`}>
                 <Button onClick={hello} bgColor={"black"} color={"white"}>
                   DELETE
                 </Button>
+                </Link>
+                <Link to={`/Form`}>
                 <Button onClick={hello} bgColor={"black"} color={"white"}>
                   Edit
                 </Button>

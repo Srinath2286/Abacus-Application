@@ -23,7 +23,7 @@ export default function AddInstitute() {
   };
   return (
     <div>
-      <NavbarOne />
+      <NavbarOne /><br />
       <form onSubmit={datasubmit}>
         <input id="instituteName"
           type="text"
@@ -73,7 +73,7 @@ export default function AddInstitute() {
         to={"/admininstitute"}
       >
         <Button bgColor={"black"} color={"white"}>
-          See-Details
+          View-Institute
         </Button>
       </Link>
     </div>

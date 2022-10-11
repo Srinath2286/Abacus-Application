@@ -15,7 +15,7 @@ let initialState = {
   password: "",
   conformpassword: "",
 };
-export default function SignUp() {
+export default function AdminSignup() {
   const [academy, setAcademy] = useState(initialState);
   const [take, setTake] = useState([]);
   console.log(take);
@@ -29,16 +29,16 @@ export default function SignUp() {
     event.preventDefault();
     array = { ...academy };
     localStorage.setItem("userdata", JSON.stringify(array));
-    await axios.post(`http://localhost:8080/register`, academy);
+    await axios.post(`http://localhost:8080/adminregister`, academy);
     console.log(academy);
-    navigate("/");
+    navigate("/adminlogin");
   };
 
   
   return (
     <div>
       <Box
-        bg="slateblue"
+        bg="brown"
         w="100%"
         height={"90px"}
         p={4}
@@ -49,10 +49,10 @@ export default function SignUp() {
         textAlign={"center"}
       >
         <Button colorScheme="white" float={"right"}>
-          <Link to={"/"}>Login </Link>
+          <Link to={"/adminlogin"}>Login </Link>
         </Button>
         <Button colorScheme="white" float={"right"}>
-          <Link to={"/signup"}>Signup </Link>
+          <Link to={"/adminsignup"}>Signup </Link>
         </Button>
         <Button colorScheme="white" float={"left"}>
           Abacus Academy Admission Portal{" "}
@@ -76,9 +76,9 @@ export default function SignUp() {
             <div>
               <form id="from-1" onSubmit={submitLoginData}>
                 <select name="userRole" onChange={handling}>
-                  <option value={"choose"}>user/admin</option>
-                  <option value="admin" disabled>admin</option>
-                  <option value="user">user</option>
+                  <option value={"choose"}>admin/user</option>
+                  <option value="admin">admin</option>
+                  <option value="user" disabled>user</option>
                 </select>
 
                 <input 
@@ -128,10 +128,10 @@ export default function SignUp() {
                 />
 
                 <HStack>
-                  
+                   
                   <input id="button1" type={"submit"} value={"SUBMIT"} />
                   
-                  <Link to={"/"}>
+                  <Link to={"/adminlogin"}>
                     <input
                       style={{ width: "180px" }}
                       id="button2"

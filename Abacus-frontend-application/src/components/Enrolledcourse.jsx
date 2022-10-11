@@ -38,7 +38,7 @@ export default function Enrolledcourse() {
       height={"550px"}
       borderRadius={"7px"}
     >
-      <Box bg="tomato" w="100%" p={4} color="white" textAlign={"center"}>
+      <Box bg="slateblue" w="100%" p={4} color="white" textAlign={"center"}>
         <ButtonGroup
           variant="link"
           HStack
@@ -47,14 +47,14 @@ export default function Enrolledcourse() {
           fontFamily={"sans-serif"}
           fontWeight="extrabold"
         >
-          <Link to={"/"}>
+          <Link to={"/home"}>
             <Button colorScheme="white">HOME</Button>
           </Link>
           <Button colorScheme="white"> ACADEMY</Button>
 
           <Link to={"/Courseenrolled"}>
             <Button colorScheme="white">
-              <Link to={"/Courseenrolled"}> ENROLLED COURESES</Link>{" "}
+              <Link to={"/Courseenrolled"}> ENROLLED COURESES</Link>
             </Button>
           </Link>
         </ButtonGroup>
@@ -112,7 +112,7 @@ export default function Enrolledcourse() {
             Number of Students: 222 <br></br>
             Course Description: yyyy
           </text>
-          <Link to={"/Courseenrolled"}>
+          <Link to={"/Form"}>
             <Button
               color={"white"}
               bgColor={"black"}
@@ -140,7 +140,7 @@ export default function Enrolledcourse() {
             Number of Students: 122 <br></br>
             Course Description: yyyy
           </text>
-          <Link to={"/Courseenrolled"}>
+          <Link to={"/Form"}>
             <Button
               color={"white"}
               bgColor={"black"}
@@ -168,7 +168,7 @@ export default function Enrolledcourse() {
             Number of Students: 122 <br></br>
             Course Description: yyyy
           </text>
-          <Link to={"/Courseenrolled"}>
+          <Link to={"/Form"}>
             <Button
               color={"white"}
               bgColor={"black"}

@@ -7,14 +7,16 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { AuthLogin } from "../PrivateRoutes/ProtectedRoutes";
 let initial = {
   email: "",
   password: "",
 };
 export default function Loginhere() {
   const [boom, setBoom] = useState(initial);
+  const {isLogin,isLogout}=useContext(AuthLogin)
   let ravan = useNavigate(null);
   let handling = (e) => {
     const { name, value } = e.target;
@@ -22,21 +24,22 @@ export default function Loginhere() {
   };
 
   let array = JSON.parse(localStorage.getItem("userdata")) || {};
-  console.log(array.email);
+  let token=Math.random()*2747;
   let submitdata = (event) => {
     event.preventDefault();
     if (array.email === boom.email && array.password === boom.password) {
       alert(`login Succesful`);
-      ravan("/");
+      ravan("/home");
+      isLogin(token)
     } else if (array.email !== boom.email) {
       alert(`provide correct email`);
-      ravan("/login");
+      ravan("/");
     } else if (array.password !== boom.password) {
       alert(`proide correct password`);
-      ravan("/login");
+      ravan("/");
     } else {
       alert(`login successful`);
-      ravan("/");
+      ravan("/home");
     }
   };
   let submitLoginData = async (event) => {
@@ -44,12 +47,13 @@ export default function Loginhere() {
   };
 
   return (
+    
     <div>
       <Box
-        bg="tomato"
+        bg="slateblue"
         w="100%"
-        height={"60px"}
-        p={4}
+        height={"120px"}
+        p={8}
         color="white"
         fontSize={"15"}
         fontFamily="sans-serif"
@@ -57,13 +61,13 @@ export default function Loginhere() {
         textAlign={"center"}
       >
         <Button colorScheme="white" float={"right"}>
-          <Link to={"/login"}>Login </Link>
+          <Link to={"/"}>Login </Link>
         </Button>
         <Button colorScheme="white" float={"right"}>
           <Link to={"/signup"}>Signup </Link>
         </Button>
         <Button colorScheme="white" float={"right"}>
-          <Link to={"/signup"}>Home </Link>
+          <Link to={"/"}>Home </Link>
         </Button>
         <Button colorScheme="white" float={"left"}>
           Abacus Academy Admission Portal{" "}
@@ -88,9 +92,7 @@ export default function Loginhere() {
             fontSize={"30px"}
             textAlign="center"
           >
-            {/* <Box bg="tomato" w="100%" p={1} color="white" borderRadius="7px" aligntext="center">
-       LOGIN
-       </Box> */}
+            
           </Text>
           <Center>
             <FormControl
@@ -137,11 +139,17 @@ export default function Loginhere() {
                     New user/admin?Signup
                   </Button>
                 </Link>
+                <Link to={"/adminlogin"}>
+                <Button colorScheme={"whatsapp"}>
+                    AdminLogin
+                  </Button>
+                  </Link>
               </Stack>
             </FormControl>
           </Center>
         </Box>
       </FormControl>
     </div>
+    
   );
 }

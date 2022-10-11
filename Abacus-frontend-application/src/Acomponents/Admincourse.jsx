@@ -56,15 +56,21 @@ export default function Admincourse() {
                 padding: "20px",
               }}
             >
-              <h1>{item.courseName}</h1>
-              <h2>{item.courseDuration}</h2>
-              <h2>⌚{item.courseTime}</h2>
-              <h2>{item.courseDescription}</h2>
+              <h1>Course Name: {item.courseName}</h1>
+              <h2>Course Duration: {item.courseDuration}</h2>
+              <h2>Course Time: {item.courseTime}</h2>
+              <h2>Course Description: {item.courseDescription}</h2>
               <Link to={`/admincourse/${item.id}`}>
                 <Button onClick={hello} bgColor={"black"} color={"white"}>
                   DELETE
                 </Button>
-              </Link>
+                </Link>
+                <Link to={"/acourse"}>
+                <Button onClick={hello} bgColor={"black"} color={"white"}>
+                  Edit
+                </Button>
+                </Link>
+              
             </div>
           ))}
         </div>

@@ -29,6 +29,7 @@ export default function Homepage() {
   };
 
   return (
+    
     <Box
       m={"auto"}
       mt={"30px"}
@@ -39,7 +40,7 @@ export default function Homepage() {
     >
       
       <Box
-        bg="tomato"
+        bg="slateblue"
         w="100%"
         p={4}
         color="white"
@@ -56,9 +57,9 @@ export default function Homepage() {
             <Link to={"/Courseenrolled"}> Enrolled </Link>{" "}
           </Button>
 
-          <Link to={"/login"}>
+          <Link to={"/"}>
             <Button colorScheme="white" flex={"right"}>
-              <Link to={"/login"}>Logout </Link>
+              <Link to={"/"}>Logout </Link>
             </Button>
           </Link>
         </ButtonGroup>
@@ -137,5 +138,6 @@ export default function Homepage() {
         </HStack>
       </Box>
     </Box>
+  
   );
 }

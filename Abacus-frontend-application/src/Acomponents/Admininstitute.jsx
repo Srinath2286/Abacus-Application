@@ -53,15 +53,21 @@ export default function Admininstitute() {
                 padding: "20px",
               }}
             >
-              <h1>{item.courseName}</h1>
-              <h2>{item.courseName}</h2>
-              <h2>⌚{item.courseTime}</h2>
-              <h2>{item.discription}</h2>
+              <h3>Institute Name: {item.instituteName}</h3>
+              <h3>Institute Desc: {item.instituteDescription}</h3>
+              <h3>Address: {item.address}</h3>
+              <h3>MobileNo: {item.mobilenumber}</h3>
+              <h3>Email: {item.email}</h3>
               <Link to={`/admincourse/${item.id}`}>
                 <Button onClick={hello} bgColor={"black"} color={"white"}>
                   DELETE
                 </Button>
-              </Link>
+                </Link>
+                <Button onClick={hello} bgColor={"black"} color={"white"}>
+                  Edit
+                </Button>
+                
+                
             </div>
           ))}
         </div>

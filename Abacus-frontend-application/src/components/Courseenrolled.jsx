@@ -41,7 +41,7 @@ export default function Admin() {
       height={"500px"}
       borderRadius={"7px"}
     >
-      <Box bg="tomato" w="100%" p={4} color="white" textAlign={"center"}>
+      <Box bg="slateblue" w="100%" p={4} color="white" textAlign={"center"}>
         <ButtonGroup
           variant="link"
           HStack
@@ -51,7 +51,7 @@ export default function Admin() {
           fontWeight="extrabold"
         >
           <Button colorScheme="white">
-            <Link to={"/"}> Home </Link>
+            <Link to={"/home"}> Home </Link>
           </Button>
           <Button colorScheme="white"> Acadamey </Button>
           <Button colorScheme="white">Enrolled Course </Button>
@@ -88,30 +88,17 @@ export default function Admin() {
           </text>
 
           <br />
+          <br />
           <text>
-            Course name :Doug Abacus <br></br>
+            Course name : Abacus <br></br>
             <br></br>
             Joined Date :DD/MM/YYYY <br></br>
             <br></br>
             Course End Date :DD/MM/YYYY
           </text>
           <br />
-          <text>
-            Course name :Doug Abacus <br></br>
-            <br></br>
-            Joined Date :DD/MM/YYYY <br></br>
-            <br></br>
-            Course End Date :DD/MM/YYYY
-          </text>
-          <br />
-          <text>
-            Course name :Doug Abacus <br></br>
-            <br></br>
-            Joined Date :DD/MM/YYYY <br></br>
-            <br></br>
-            Course End Date :DD/MM/YYYY
-          </text>
-
+          
+         
           <Button
             borderRadius={"5px"}
             fontWeight={"bold"}

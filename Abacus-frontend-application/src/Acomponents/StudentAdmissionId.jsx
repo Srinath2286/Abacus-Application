@@ -1,29 +1,22 @@
-import { Button } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Button } from "@chakra-ui/react";
+import { Link, useParams } from "react-router-dom";
 import hello from "../assets/deletedproducts.svg";
-export default function AdminacademyId() {
- 
+export default function StudentAdmissionId() {
   const [take, setTake] = useState({});
-  const[allData,setAllData]=useState([])
-  console.log(take);
-  let id = useParams();
-  let deleteacademy = async () => {
+  let parms = useParams();
+  let funtwo = async () => {
     try {
-      axios.delete(`http://localhost:8080/deleteacademy/${id}`);
+      axios.delete(`http://localhost:8080/?deletestudent=149/${parms.id}`);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    deleteacademy();
+    funtwo();
   }, []);
-  const handleDelete=(id)=>{
-    allData.splice(id,1)
-    setAllData([...allData])
-  }
   return (
     <div>
       <div
@@ -39,10 +32,10 @@ export default function AdminacademyId() {
         />
         <br />
         <br />
-        <Link to={"/adminacademy"}>
+        <Link to={"/studentadmission"}>
           <br />
-          <Button bgColor={"black"} color={"white"} ml={"600px"}onClick={()=>handleDelete(id)}>
-            Admin-academy
+          <Button bgColor={"black"} color={"white"} ml={"600px"}>
+            Student-Admission
           </Button>
         </Link>
       </div>

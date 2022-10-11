@@ -3,31 +3,31 @@ import { NavLink } from "react-router-dom";
 
 let init = [
   {
-    to: "/",
+    to: "/home",
     title: "HOME",
   },
   {
     to: "/acourse",
-    title: "ADDCOURSE",
+    title: "COURSE",
   },
   {
     to: "/aacademy",
-    title: "ADDACADEMY",
+    title: "ACADEMY",
   },
   {
     to: "/astudent",
-    title: "ADDSTUDENT",
+    title: "STUDENT",
   },
   {
     
       to: "/addinstitute",
-      title: "ADDINSTITUTE",
+      title: "INSTITUTE",
     
   },
   
   {
-    to: "/login",
-    title: "LOGIN",
+    to: "/adminlogin",
+    title: "LOGOUT",
   },
 ];
 let one = {

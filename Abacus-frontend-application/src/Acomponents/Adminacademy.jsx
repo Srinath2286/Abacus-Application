@@ -13,7 +13,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { EditIcon, AddIcon, DeleteIcon } from "@chakra-ui/icons";
-import { dialogActionsClasses, responsiveFontSizes } from "@mui/material";
 import axios from "axios";
 import NavbarOne from "../CurdOerators/Navbarone";
 
@@ -22,20 +21,8 @@ let initail = {
 };
 export default function Adminacademy() {
   const [text, setText] = useState(initail);
-  // const [dataone, sendData] = useState([]);
   const [taking, setTaking] = useState([]);
   console.log(taking);
-
-  // let newfucntions = async () => {
-  //   try {
-  //     let response = await fetch(`http://localhost:8080/academy/`);
-  //     let sendoing = await response.json();
-  //     sendData(sendoing.data);
-  //     console.log(sendoing.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   let ravan = useNavigate(null);
   let handling = (e) => {
     const { name, value } = e.target;
@@ -68,36 +55,16 @@ export default function Adminacademy() {
   return (
     <Box
       m={"auto"}
-      mt={"20px"}
+      mt={"30px"}
       backgroundColor={"lightgray"}
       width={"900px"}
-      height={"630px"}
+      height={"600px"}
+      marginTop={"20px"}
       borderRadius={"7px"}
+      
     >
       <NavbarOne />
-      <Box
-        bg="purple"
-        w="100%"
-        p={4}
-        color="white"
-        fontSize={"15"}
-        fontFamily="sans-serif"
-        fontWeight={"extrabold"}
-      >
-        <ButtonGroup variant="link" Stack spacing="30">
-          <Button colorScheme="white">Abacus Academy </Button>
-          <Button colorScheme="white">Acadamey </Button>
-
-          <Button colorScheme="white">Course </Button>
-          <Button colorScheme="white">Students </Button>
-
-          <Link to={"/login"}>
-            <Button colorScheme="white" flex={"right"}>
-              <Link to={"/login"}>Logout </Link>
-            </Button>
-          </Link>
-        </ButtonGroup>
-      </Box>
+      
 
       <br />
       <br />
@@ -147,7 +114,6 @@ export default function Adminacademy() {
               <Text fontWeight={"bold"}>Abacus Center</Text>
               <HStack spacing={"20px"}>
                 <Text fontWeight={"bold"}>Place Channai</Text>
-                <Text>⭐⭐⭐⭐⭐</Text>
                 <br></br>
                 <br></br>
                 <br></br>
@@ -171,7 +137,6 @@ export default function Adminacademy() {
               <Text fontWeight={"bold"}>Abacus Academy</Text>
               <HStack spacing={"20px"}>
                 <Text fontWeight={"bold"}>Place Bangalore</Text>
-                <Text>⭐⭐⭐⭐⭐</Text>
                 <br></br>
                 <br></br>
                 <br></br>
@@ -195,7 +160,7 @@ export default function Adminacademy() {
               <Text fontWeight={"bold"}>Abc Academy</Text>
               <HStack spacing={"20px"}>
                 <Text ml={"10px"} fontWeight={"bold"}>
-                  Coimbatore ⭐⭐⭐⭐⭐
+                  Coimbatore 
                 </Text>
                 <br></br>
                 <br></br>
@@ -252,18 +217,18 @@ export default function Adminacademy() {
                 h={"220px"}
                 src={item.academyImageurl}
               />
-              <Text fontWeight={"bold"}>{item.academyName}</Text>
-              <Text fontWeight={"bold"}>{item.location}</Text>
-              <Text fontWeight={"bold"}>{item.mobileNumber}</Text>
-              <Text fontWeight={"bold"}>{item.email}</Text>
+              <Text fontWeight={"bold"}>Academy name: {item.academyName}</Text>
+              <Text fontWeight={"bold"}>Location: {item.location}</Text>
+              <Text fontWeight={"bold"}>Mobile No: {item.mobileNumber}</Text>
+              <Text fontWeight={"bold"}>Email: {item.email}</Text>
               <Text fontWeight={"bold"}>
-                ✌️{item.description}    
+              Description: {item.description}   
               </Text>
-              <Link to={`/adminacademy/${item.id}`}>
+                <Link to={`/adminacademy/${item.id}`}>  
                 <Button marginLeft={"50px"} bgColor={"black"} color={"white"}>
                   DELETE
                 </Button>
-              </Link>
+                </Link> 
             </Box>
           ))}
         </Box>

@@ -85,3 +85,10 @@
   margin: 10px;
   float: right;
 }
+.thead{
+  display: flex;
+  justify-content: space-between;
+  flex: auto;
+}
+
+

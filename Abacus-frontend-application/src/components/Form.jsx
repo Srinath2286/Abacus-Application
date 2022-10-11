@@ -1,175 +1,117 @@
+import { Button,ButtonGroup,Box } from "@chakra-ui/react";
 import axios from "axios";
-import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Box, Button, ButtonGroup } from "@chakra-ui/react";
+//import "./m.css";
 
-import "./main.css";
-
-let initialState = {
-  firstname: "",
-  lastName: "",
-  fatherName: "",
-  motherName: "",
-  email: "",
-  mobileNumber: "",
-  alternateNumber: "",
-  maleorFemale: "",
+let initial = {
+  studentName: "",
+  studentDOB: "",
+  address: "",
+  mobilenumber: "",
   age: "",
-  houseNumber: "",
-  areaName: "",
-  pinCode: "",
-  streetName: "",
-  state: "",
-  nationality: "",
+  gender: "",
+ 
+
 };
-export default function Addstudent() {
-  const [academy, setAcademy] = useState(initialState);
-  const [take, setTake] = useState([]);
-  console.log(take);
-  let handling = (e) => {
+export default function AddStudent() {
+  const [student, setstudent] = useState(initial);
+  let handleChange = (e) => {
     const { name, value } = e.target;
-    setAcademy({ ...academy, [name]: value });
+    setstudent({ ...student, [name]: value });
   };
-  let submitAcademyData = async (event) => {
+  let datasubmit = (event) => {
     event.preventDefault();
-    await axios.post(`http://localhost:8080/student/addstudent`, academy);
-    console.log(academy);
+    axios.post(`http://localhost:8080/addadmission`, student);
   };
-  let newfunction = async () => {
-    await axios
-      .get(`http://localhost:8080/student/addstudent`)
-      .then((res) => {
-        setTake(res.data);
-      })
-      .catch((erro) => {
-        console.log(erro);
-      });
-  };
-  useEffect(() => {
-    newfunction();
-  }, []);
   return (
-    <Box
-      m={"auto"}
-      mt={"20px"}
-      backgroundColor={"lightgrey"}
-      width={"900px"}
-      height={"570px"}
-      borderRadius={"7px"}
-    >
-      <Box bg="purple" w="100%" p={4} color="white" textAlign={"center"}>
-        <ButtonGroup
+    <Box bg="lightgrey" w="100%" height={"720px"} p={4} color="black" textAlign={"center"} >
+      <ButtonGroup
           variant="link"
           HStack
-          spacing="24px"
+          spacing="5"
+          align="center"
           fontFamily={"sans-serif"}
           fontWeight="extrabold"
-          textAlign={"center"}
         >
-          <Button colorScheme="white" alignSelf={"center"}>
-            Acadamey{" "}
-          </Button>
-          <Button colorScheme="white" alignSelf={"center"}>
-            Course{" "}
-          </Button>
-          <Button colorScheme="white" alignSelf={"center"} fontSize={20}>
-            Students{" "}
-          </Button>
-          <Link to={"/login"}>
-            <Button colorScheme="white" flex={"right"}>
-              <Link to={"/login"}>Logout </Link>
+          <Link to={"/home"}>
+            <Button colorScheme="white">HOME</Button>
+          </Link>
+          <Button colorScheme="white"> ACADEMY</Button>
+
+          <Link to={"/Courseenrolled"}>
+            <Button colorScheme="white">
+              <Link to={"/Courseenrolled"}> ENROLLED COURESES</Link>
             </Button>
           </Link>
+          
         </ButtonGroup>
-      </Box>
-      <div>
-        <form onSubmit={submitAcademyData}>
-          <div>
-            <input
-              id="firstName"
-              type="text"
-              value={academy.firstName}
-              placeholder="Enter the firstname"
-              onChange={handling}
-              name="firstName"
-              required
-            />
-            <input
-              id="lastName"
-              type="text"
-              value={academy.lastName}
-              placeholder="Enter the lastname"
-              onChange={handling}
-              name="lastName"
-              required
-            />
-            <input
-              id="fatherName"
-              type="text"
-              value={academy.fatherName}
-              placeholder="Enter the fathername"
-              onChange={handling}
-              name="fatherName"
-              required
-            />
-            <input
-              id="motherName"
-              type="text"
-              value={academy.motherName}
-              placeholder="Enter the mothername"
-              onChange={handling}
-              name="motherName"
-              required
-            />
+      
+      
+    <div>
+      
+      <form onSubmit={datasubmit}>
+        <input id="studentName"
+          type="text"
+          value={student.studentName}
+          placeholder="Enter Your Name "
+          name="studentName"
+          onChange={handleChange}
+          required
+        />
+        <input id="studentDOB"
+          type="date"
+          value={student.studentDOB}
+          placeholder="Enter Your DOB "
+          name="studentDOB"
+          onChange={handleChange}
+          required
+        />
+        <input id="address"
+          type="text"
+          value={student.address}
+          placeholder="Enter Your  address"
+          name="address"
+          onChange={handleChange}
+          required
+        />
+        <input id="mobilenumber"
+          type="number"
+          value={student.mobilenumber}
+          placeholder="Enter Your mobilenumber "
+          name="mobilenumber"
+          onChange={handleChange}
+          required
+        />
+        <input id="age"
+          type="number"
+          value={student.age}
+          placeholder="Enter Your age "
+          name="age"
+          onChange={handleChange}
+          required
+        />
+        <input id="gender"
+          type="text"
+          value={student.gender}
+          placeholder="Enter your gender "
+          name="gender"
+          onChange={handleChange}
+          required
+        />
+        
+        <input type="submit" value={"ADD-DATA"} />
+      </form>
 
-            <input
-              id="email"
-              type="email"
-              value={academy.email}
-              placeholder="Enter the emailid"
-              onChange={handling}
-              name="email"
-            />
-
-            <input
-              id="mobileNumber"
-              type="number"
-              value={academy.mobileNumber}
-              placeholder="Enter the contactnumber"
-              onChange={handling}
-              name="mobileNumber"
-            />
-
-            <input
-              id="alternateNumber"
-              type="number"
-              value={academy.alternateNumber}
-              placeholder="Enter the alternate number"
-              onChange={handling}
-              name="alternateNumber"
-            />
-
-            <input
-              id="maleorFemale"
-              type="text"
-              value={academy.maleorFemale}
-              placeholder="Enter male or female"
-              onChange={handling}
-              name="maleorFemale"
-            />
-
-            <input
-              id="age"
-              type="number"
-              value={academy.age}
-              placeholder="Enter the age"
-              onChange={handling}
-              name="age"
-            />
-          </div>
-        </form>
-      </div>
+      <Link
+        style={{ marginLeft: "600px", marginTop: "20px" }}
+        to={"/studentadmission"}
+      >
+        <Button bgColor={"black"} color={"white"}>
+          View-Admission
+        </Button>
+      </Link>
+    </div>
     </Box>
   );
 }

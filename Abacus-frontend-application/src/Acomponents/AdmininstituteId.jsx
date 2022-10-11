@@ -8,7 +8,7 @@ export default function Admininstituteid() {
   let parms = useParams();
   let funtwo = async () => {
     try {
-      axios.delete(`http://localhost:8080/?deleteinstitute/${parms.id}`);
+      axios.delete(`http://localhost:8080/deleteinstitute/${parms.id}`);
     } catch (error) {
       console.log(error);
     }

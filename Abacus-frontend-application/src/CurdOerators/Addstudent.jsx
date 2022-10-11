@@ -24,7 +24,7 @@ export default function AddStudent() {
   };
   return (
     <div>
-      <NavbarOne />
+      <NavbarOne /><br />
       <form onSubmit={datasubmit}>
         <input id="studentName"
           type="text"
@@ -75,7 +75,7 @@ export default function AddStudent() {
         to={"/adminstudent"}
       >
         <Button bgColor={"black"} color={"white"}>
-          See-Details
+          View-Student
         </Button>
       </Link>
     </div>

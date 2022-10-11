@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./m.css";
 import NavbarOne from "./Navbarone";
 let initial = {
+  academyId: "",
   academyName: "",
   academyImageurl: "",
   mobileNumber: "",
@@ -24,7 +25,7 @@ export default function AddAcademy() {
   };
   return (
     <div>
-      <NavbarOne />
+      <NavbarOne /><br />
       <form onSubmit={datasubmit}>
         <input id="academyName"
           type="text"
@@ -81,7 +82,7 @@ export default function AddAcademy() {
         to={"/adminacademy"}
       >
         <Button bgColor={"black"} color={"white"}>
-          See-Details
+          view-Academy
         </Button>
       </Link>
     </div>

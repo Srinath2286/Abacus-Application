@@ -18,7 +18,7 @@ export default function AdminoneId() {
 
   useEffect(() => {
     deletecourse();
-  }, []);
+  }, [1]);
   return (
     <div>
       <div

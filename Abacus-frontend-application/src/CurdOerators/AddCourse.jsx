@@ -23,7 +23,7 @@ export default function AddCourse() {
   };
   return (
     <div>
-      <NavbarOne />
+      <NavbarOne /><br />
       <form onSubmit={datasubmit}>
         <input id="courseName"
           type="text"
@@ -72,7 +72,7 @@ export default function AddCourse() {
         style={{ marginLeft: "580px", marginTop: "20px" }}
         to={"/admincourse"}
       >
-        <Button bgColor={"black"} color={"white"}>See-Details</Button>
+        <Button bgColor={"black"} color={"white"}>View-Course</Button>
       </Link>
     </div>
   );
